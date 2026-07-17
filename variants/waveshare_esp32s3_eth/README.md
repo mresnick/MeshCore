@@ -18,7 +18,7 @@ build flags in `platformio.ini`).
 | CS (NSS)                  | 41            | SPI chip select |
 | RST (RESET)               | 42            |      |
 | BUSY                      | 47            |      |
-| DIO1                      | 48            |      |
+| DIO1                      | 17            |      |
 | RXEN                      | 15            | RF switch RX enable |
 | TXEN         | — (jumper to module DIO2) | DIO2 drives the TX side of the RF switch (`SX126X_DIO2_AS_RF_SWITCH`) |
 | VCC          | 3V3           |      |
@@ -32,5 +32,5 @@ TF card slot and all onboard peripherals keep working. Do **not** move any signa
 GPIO 9–14 (W5500), 4–7 (TF card), 33–37 (octal PSRAM), 19/20 (USB), 43/44 (UART0),
 21 (WS2812 RGB LED, used as the TX indicator), or strapping pins 0/45/46.
 
-I2C for an optional RTC/sensors is on SDA=16 / SCL=17 (the ESP32-S3 default of
+I2C for an optional RTC/sensors is on SDA=16 / SCL=18 (the ESP32-S3 default of
 SDA=8/SCL=9 would clash with the W5500 reset line).
