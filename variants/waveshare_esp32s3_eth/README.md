@@ -5,8 +5,12 @@ Companion radio / repeater / room server on a [Waveshare ESP32-S3-ETH](https://w
 with an external [Waveshare Core1262](https://www.waveshare.com/wiki/Core1262-868M) LoRa module.
 
 The `companion_radio_eth` build serves the standard companion frame protocol on TCP
-port 5000 over wired Ethernet (DHCP by default; static IP via the `ETH_STATIC_*`
-build flags in `platformio.ini`).
+port 5000 over wired Ethernet (DHCP by default; static IP via the `ETHERNET_STATIC_*`
+build flags in `platformio.ini`). Ethernet support is provided by `W5500EthernetInterface`
+(`src/helpers/ethernet/w5500/`), a `SerialEthernetInterface` implementation for
+arduino-esp32 3.x's native `ETH.h` W5500 driver, selected via `ETHERNET_USE_W5500` —
+the same `ETHERNET_ENABLED`/`ETHERNET_CLASS` mechanism used by the CH390 (ThinkNode M7)
+and RAK13800 (RAK4631) Ethernet variants.
 
 ## Wiring: Core1262 to ESP32-S3-ETH header
 
